@@ -25,6 +25,7 @@ import com.eastvantage.appointment.response.AppointmentResponse;
 import com.eastvantage.appointment.response.SuccessResponse;
 import com.eastvantage.appointment.service.AppointmentService;
 
+import io.swagger.v3.oas.annotations.Operation;
 import lombok.extern.slf4j.Slf4j;
 
 /**
@@ -54,6 +55,7 @@ public class AppointmentController {
 	 *         error, success message, data which is saved and HTTP status code on
 	 *         successful saving of the appointment details
 	 */
+	@Operation(summary = "This API used for creating/ saving the particular appointment details")
 	@PostMapping("/appointment")
 	public ResponseEntity<SuccessResponse> createAppointment(@Valid @RequestBody AppointmentDto appointmentDto) {
 		log.debug(DEBUG, appointmentDto);
@@ -74,6 +76,7 @@ public class AppointmentController {
 	 *         error, success message, data which is saved and HTTP status code on
 	 *         successful update of the appointment details
 	 */
+	@Operation(summary = "This API used for updating the particular appointment details")
 	@PutMapping("/appointment")
 	public ResponseEntity<SuccessResponse> updateAppointment(@Valid @RequestBody AppointmentDto appointmentDto,
 			@RequestParam("appointmentId") long appointmentId) {
@@ -92,6 +95,7 @@ public class AppointmentController {
 	 *         error, success message, data which is saved and HTTP status code on
 	 *         successful deletion of the appointment
 	 */
+	@Operation(summary = "This API used for deleting the particular appointment details")
 	@DeleteMapping("/appointment")
 	public ResponseEntity<SuccessResponse> deleteAppointment(@RequestParam("appointmentId") long appointmentId) {
 		log.debug(DEBUG, appointmentId);
@@ -111,6 +115,7 @@ public class AppointmentController {
 	 *         appointment object fetched based on the id and HTTP status code on
 	 *         successful deletion of the appointment
 	 */
+	@Operation(summary = "This API used for fetching the particular appointment details")
 	@GetMapping("/appointment")
 	public ResponseEntity<SuccessResponse> findAppointmentById(@RequestParam("appointmentId") long appointmentId) {
 		log.debug(DEBUG, appointmentId);
@@ -130,6 +135,7 @@ public class AppointmentController {
 	 *         given date range and HTTP status code on successful deletion of the
 	 *         appointment. The status code will be 204 when there is no data found.
 	 */
+	@Operation(summary = "This API used for fetching all the appointment details based on date filter")
 	@PostMapping("/appointment/filter")
 	public ResponseEntity<SuccessResponse> getAllAppointment(@RequestBody AppointmentFilterDto dto) {
 		log.debug(DEBUG, dto);
