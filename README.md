@@ -22,7 +22,7 @@ http://localhost:8080/
 The service is just a simple appointment application REST service. It uses an in-memory database (H2) to store the data. The REST end points are defined on the controller. It has various CRUD methods like create, update, delete, get and get all appointments.
 
 ## Postman API documentation
-The API documentation is been added in the repository. It contains all the resource details with sample request example and response example
+The API documentation is been added in the repository. It contains all the resource details with sample request example and response example. Please download it.
 
 ## To view Swagger 2 API docs
 Run the server and browse to localhost:8080/swagger-ui.html
