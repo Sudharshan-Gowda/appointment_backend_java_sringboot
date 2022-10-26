@@ -1,9 +1,9 @@
 {
 	"info": {
-		"_postman_id": "92a2bfd2-0431-498d-b274-41ddd5ee7bd0",
+		"_postman_id": "25a993e0-e322-48ab-ad66-c6d0adc26819",
 		"name": "appointment",
 		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json",
-		"_exporter_id": "22803510"
+		"_exporter_id": "18808982"
 	},
 	"item": [
 		{
@@ -13,7 +13,7 @@
 				"header": [],
 				"body": {
 					"mode": "raw",
-					"raw": "{\r\n    \"appointmentDateTime\": \"10-30-2022 10:22:00\",\r\n    \"appointmentName\": \"appointment 3\",\r\n    \"appointmentDuration\": \"00:45:00\"\r\n}",
+					"raw": "{\r\n    \"appointmentDateTime\": \"10-24-2022 10:22:00\",\r\n    \"appointmentName\": \"appointment 1\",\r\n    \"appointmentDuration\": \"00:30:30\"\r\n}",
 					"options": {
 						"raw": {
 							"language": "json"
