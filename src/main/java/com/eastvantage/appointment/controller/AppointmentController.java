@@ -4,6 +4,8 @@ import static com.eastvantage.appointment.common.AppointmentCommon.*;
 
 import java.util.List;
 
+import javax.validation.Valid;
+
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseEntity;
@@ -53,7 +55,7 @@ public class AppointmentController {
 	 *         successful saving of the appointment details
 	 */
 	@PostMapping("/appointment")
-	public ResponseEntity<SuccessResponse> createAppointment(@RequestBody AppointmentDto appointmentDto) {
+	public ResponseEntity<SuccessResponse> createAppointment(@Valid @RequestBody AppointmentDto appointmentDto) {
 		log.debug(DEBUG, appointmentDto);
 		return new ResponseEntity<>(
 				new SuccessResponse(false, SAVE_SUCCESS_MESSAGE, appointmentService.createAppointment(appointmentDto)),
@@ -73,7 +75,7 @@ public class AppointmentController {
 	 *         successful update of the appointment details
 	 */
 	@PutMapping("/appointment")
-	public ResponseEntity<SuccessResponse> updateAppointment(@RequestBody AppointmentDto appointmentDto,
+	public ResponseEntity<SuccessResponse> updateAppointment(@Valid @RequestBody AppointmentDto appointmentDto,
 			@RequestParam("appointmentId") long appointmentId) {
 		log.debug(DEBUG, appointmentDto + " " + appointmentId);
 		return new ResponseEntity<>(new SuccessResponse(false, UPDATE_SUCCESS_MESSAGE,
